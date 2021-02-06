@@ -1,10 +1,11 @@
+import math
 import pytest
 
 from .task import find_new_map
 
 
 class Case:
-    def __init__(self, name: str, n: int, old_capital: int, new_capital: list,
+    def __init__(self, name: str, n: int, old_capital: int, new_capital: int,
                  old_map: list, new_map: list):
         self._name = name
         self.n = n
@@ -33,6 +34,62 @@ TEST_CASES = [
         new_capital=4,
         old_map=[6, 1, 2, 4, 2],
         new_map=[6, 4, 1, 4, 2],
+    ),
+    Case(
+        name='base3',
+        n=5,
+        old_capital=2,
+        new_capital=3,
+        old_map=[2, 1, 2, 2],
+        new_map=[3, 1, 2, 2],
+    ),
+    Case(
+        name='base4',
+        n=5,
+        old_capital=2,
+        new_capital=5,
+        old_map=[2, 1, 2, 2],
+        new_map=[2, 5, 1, 2],
+    ),
+    Case(
+        name='base5',
+        n=2,
+        old_capital=1,
+        new_capital=2,
+        old_map=[1],
+        new_map=[2],
+    ),
+    Case(
+        name='base6',
+        n=6,
+        old_capital=2,
+        new_capital=2,
+        old_map=[6, 1, 2, 4, 2],
+        new_map=[6, 1, 2, 4, 2],
+    ),
+    Case(
+        name='base7',
+        n=4,
+        old_capital=3,
+        new_capital=2,
+        old_map=[3, 3, 3],
+        new_map=[3, 2, 3],
+    ),
+    Case(
+        name='base8',
+        n=8,
+        old_capital=2,
+        new_capital=4,
+        old_map=[2, 6, 1, 6, 2, 1, 7],
+        new_map=[4, 1, 6, 6, 2, 1, 7],
+    ),
+    Case(
+        name='base9',
+        n=9,
+        old_capital=3,
+        new_capital=8,
+        old_map=[2, 3, 3, 3, 3, 6, 7, 8],
+        new_map=[2, 3, 6, 3, 3, 7, 8, 8],
     ),
 ]
 

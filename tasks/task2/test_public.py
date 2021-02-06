@@ -1,3 +1,4 @@
+import math
 import pytest
 
 from .task import news_dissemination
@@ -18,7 +19,7 @@ class Case:
 
 TEST_CASES = [
     Case(
-        name='base',
+        name='base1',
         n=7,
         m=5,
         groups=[
@@ -29,6 +30,79 @@ TEST_CASES = [
             [6, 7],
         ],
         number_of_people=[4, 4, 1, 4, 4, 2, 2],
+    ),
+    Case(
+        name='base2',
+        n=1,
+        m=5,
+        groups=[
+            [],
+            [],
+            [],
+            [],
+            [],
+        ],
+        number_of_people=[1],
+    ),
+    Case(
+        name='base3',
+        n=7,
+        m=5,
+        groups=[
+            [2, 5, 4],
+            [2, 5, 4],
+            [2, 5, 4],
+            [2, 5, 4],
+            [2, 5, 4],
+        ],
+        number_of_people=[1, 3, 1, 3, 3, 1, 1],
+    ),
+    Case(
+        name='base4',
+        n=8,
+        m=5,
+        groups=[
+            [1, 2, 3, 4, 5, 6, 7, 8],
+            [],
+            [],
+            [],
+            [],
+        ],
+        number_of_people=[8, 8, 8, 8, 8, 8, 8, 8],
+    ),
+    Case(
+        name='base5',
+        n=9,
+        m=7,
+        groups=[
+            [1, 2],
+            [3, 4],
+            [5, 6],
+            [7, 8],
+            [6, 7],
+            [4, 5],
+            [2, 3]
+        ],
+        number_of_people=[8, 8, 8, 8, 8, 8, 8, 8, 1],
+    ),
+    Case(
+        name='base6',
+        n=3,
+        m=0,
+        groups=[],
+        number_of_people=[1, 1, 1],
+    ),
+    Case(
+        name='base7',
+        n=11,
+        m=4,
+        groups=[
+            [1, 2, 8, 9],
+            [3, 4, 5],
+            [4, 6, 7],
+            [1, 8, 9, 10, 11]
+        ],
+        number_of_people=[6, 6, 5, 5, 5, 5, 5, 6, 6, 6, 6],
     ),
 ]
 

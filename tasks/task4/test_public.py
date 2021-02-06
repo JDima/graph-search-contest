@@ -1,3 +1,4 @@
+import math
 import pytest
 
 from .task import harmonious_graph
@@ -5,7 +6,7 @@ from .task import harmonious_graph
 
 class Case:
     def __init__(self, name: str, n: int, m: int, edges: list,
-                 count_new_edges: list):
+                 count_new_edges: int):
         self._name = name
         self.n = n
         self.m = m
@@ -18,7 +19,7 @@ class Case:
 
 TEST_CASES = [
     Case(
-        name='base',
+        name='base1',
         n=14,
         m=8,
         edges=[
@@ -32,6 +33,28 @@ TEST_CASES = [
             (11, 12),
         ],
         count_new_edges=1,
+    ),
+    Case(
+        name='base2',
+        n=200000,
+        m=3,
+        edges=[
+            (7, 9),
+            (9, 8),
+            (4, 5),
+        ],
+        count_new_edges=0,
+    ),
+    Case(
+        name='base3',
+        n=20,
+        m=3,
+        edges=[
+            (7, 9),
+            (9, 8),
+            (4, 5)
+        ],
+        count_new_edges=0,
     ),
 ]
 
